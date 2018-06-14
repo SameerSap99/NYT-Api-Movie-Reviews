@@ -1,0 +1,25 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    </head>
+    <body ng-app='Trends'>
+      <div ng-controller="MainController">
+        <h1>Recent Movies</h1>
+        <input ng-model="search"> <input type="submit" ng-click="submitSearch(search)" value="Search!">
+        <div ng-repeat="movie in list">
+          <h3> {{ movie.title }}</h3>
+          <h5> {{ movie.date }}</h5>
+          <h5>{{ movie.rating }}</h5>
+          <p> {{ movie.summary }}</p>
+          <a ng-href="{{ movie.url }}">Read Review </a>
+          <br>
+        </div>
+      </div>
+      <script type="text/javascript" src="js/app.js"></script>
+
+      <script type="text/javascript" src="js/controllers/MainController.js"></script>
+
+      <script type="text/javascript" src="js/services/nyt.js"></script>
+    </body>
+  </html>
